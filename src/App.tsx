@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Home, Star } from 'lucide-react';
 
 function App() {
@@ -180,17 +180,17 @@ function App() {
       </div>
 
       {/* Custom Styles */}
-      <style jsx>{`
+      <style>{`
         @keyframes twinkle {
           0%, 100% { opacity: 0.3; }
           50% { opacity: 1; }
         }
-        
+
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-20px) rotate(180deg); }
         }
-        
+
         @keyframes shootingStar {
           0% {
             transform: translateX(-100px) translateY(100px);
@@ -207,15 +207,15 @@ function App() {
             opacity: 0;
           }
         }
-        
+
         .animate-twinkle {
           animation: twinkle 2s ease-in-out infinite;
         }
-        
+
         .animate-float {
           animation: float 5s ease-in-out infinite;
         }
-        
+
         .shooting-star {
           position: absolute;
           top: 20%;
@@ -226,7 +226,7 @@ function App() {
           border-radius: 50%;
           animation: shootingStar 8s linear infinite;
         }
-        
+
         .shooting-star::before {
           content: '';
           position: absolute;
@@ -238,32 +238,32 @@ function App() {
           transform-origin: 0 0;
           transform: translateX(-50px);
         }
-        
+
         .polygon-triangle {
           clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
           border: none;
           background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.3), transparent);
         }
-        
+
         .polygon-pentagon {
           clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
           border: none;
           background: linear-gradient(45deg, transparent, rgba(6, 182, 212, 0.3), transparent);
         }
-        
+
         @media (max-width: 768px) {
           .shooting-star {
             width: 1px;
             height: 1px;
           }
-          
+
           .shooting-star::before {
             width: 30px;
             height: 1px;
             transform: translateX(-30px);
           }
         }
-        
+
         @media (prefers-reduced-motion: reduce) {
           .animate-twinkle,
           .animate-float,
